@@ -5,6 +5,8 @@ const dotenv = require('dotenv');
 const bodyParser = require("body-parser");
 const FormData = require("form-data");
 const fetch = require("node-fetch");
+const cors = require('cors');
+
 
 
 dotenv.config();
@@ -20,6 +22,7 @@ console.log(`Your API key is ${application_key}`);
 const app = express()
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+app.use(cors());
 app.use(express.static('dist'))
 
 
